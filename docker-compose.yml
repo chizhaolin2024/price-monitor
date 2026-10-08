@@ -1,0 +1,11 @@
+services:
+  pricewatch:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    env_file:
+      - path: backend/.env
+        required: false
+    restart: unless-stopped
